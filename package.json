@@ -1,0 +1,15 @@
+{
+  "name": "generative-art-learning",
+  "version": "1.0.0",
+  "description": "Experiments in generative art",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "generative",
+    "art"
+  ],
+  "author": "Aitor Urrutia",
+  "license": "ISC"
+}
