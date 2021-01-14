@@ -4,7 +4,7 @@
   "description": "Experiments in generative art",
   "main": "index.js",
   "scripts": {
-    "serve": "serve"
+    "serve": "browser-sync start --server -f -w"
   },
   "keywords": [
     "generative",
@@ -13,6 +13,8 @@
   "author": "Aitor Urrutia",
   "license": "ISC",
   "dependencies": {
+    "browser-sync": "^2.26.13",
+    "http-server": "^0.12.3",
     "serve": "^11.3.2"
   }
 }
