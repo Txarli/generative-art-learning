@@ -24,7 +24,7 @@ function draw(x, y, width, height) {
   context.stroke();
 }
 
-var step = 80;
+var step = 60;
 for(var x = 0; x < size; x += step) {
   for(var y = 0; y < size; y+= step) {
     draw(x, y, step, step);    
