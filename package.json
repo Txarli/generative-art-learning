@@ -4,12 +4,15 @@
   "description": "Experiments in generative art",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "serve"
   },
   "keywords": [
     "generative",
     "art"
   ],
   "author": "Aitor Urrutia",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^11.3.2"
+  }
 }
