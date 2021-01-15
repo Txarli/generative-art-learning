@@ -30,7 +30,12 @@ const sketch = (p5: P5) => {
             p5.pop();
           }
         }
-	};
+    };
+    
+    p5.mouseClicked = () => {
+        p5.clear()
+        p5.redraw()
+    }
 };
 
 new P5(sketch);
