@@ -10,6 +10,10 @@
     "generative",
     "art"
   ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Txarli/generative-art-learning"
+  },
   "author": "Aitor Urrutia",
   "license": "ISC",
   "dependencies": {
