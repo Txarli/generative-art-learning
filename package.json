@@ -4,7 +4,7 @@
   "description": "Experiments in generative art",
   "main": "index.js",
   "scripts": {
-    "serve": "browser-sync start --server -f -w"
+    "serve": "parcel index.html"
   },
   "keywords": [
     "generative",
@@ -13,8 +13,11 @@
   "author": "Aitor Urrutia",
   "license": "ISC",
   "dependencies": {
-    "browser-sync": "^2.26.13",
-    "http-server": "^0.12.3",
-    "serve": "^11.3.2"
+    "@types/p5": "^0.9.1",
+    "p5": "^1.2.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.3"
   }
 }
