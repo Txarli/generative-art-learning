@@ -13,9 +13,9 @@ context.lineWidth = 2;
 function draw(x, y, width, height) {
   var leftToRight = Math.random() >= 0.5;
 
-  if(leftToRight) {
+  if (leftToRight) {
     context.moveTo(x, y);
-    context.lineTo(x + width, y + height);    
+    context.lineTo(x + width, y + height);
   } else {
     context.moveTo(x + width, y);
     context.lineTo(x, y + height);
@@ -25,9 +25,8 @@ function draw(x, y, width, height) {
 }
 
 var step = 60;
-for(var x = 0; x < size; x += step) {
-  for(var y = 0; y < size; y+= step) {
-    draw(x, y, step, step);    
+for (var x = 0; x < size; x += step) {
+  for (var y = 0; y < size; y += step) {
+    draw(x, y, step, step);
   }
 }
-
