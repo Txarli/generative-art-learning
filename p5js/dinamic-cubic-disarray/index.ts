@@ -1,6 +1,6 @@
 import P5 from 'p5';
 
-const multiplier = 0.97;
+const multiplier = 0.25;
 
 const sketch = (p5: P5) => {
   p5.setup = () => {
