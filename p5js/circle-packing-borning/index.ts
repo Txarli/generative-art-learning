@@ -12,67 +12,77 @@ const sketch = (p5: P5) => {
   var minRadius = 5;
   var maxRadius = 65;
   var totalCircles = 650;
-
+  let currentCircle: Circle = createCircle();
   const maximumTries = 100;
 
   p5.setup = () => {
     p5.createCanvas(size, size);
     p5.background(255);
-    p5.frameRate(5);
+
+    p5.frameRate(200);
   };
 
   p5.draw = () => {
-    p5.noFill();
+    p5.fill('white');
     p5.strokeWeight(2);
 
-    createAndDrawCircle();
-    if (circles.length >= totalCircles) {
+    currentCircle.radius += 1;
+
+    if (
+      doesCircleHaveACollision(currentCircle) ||
+      currentCircle.radius >= maxRadius
+    ) {
+      currentCircle.radius -= 1;
+      circles.push(currentCircle);
+      currentCircle = createCircle();
+    } else {
+      p5.push();
+      p5.stroke('white');
+      p5.circle(
+        currentCircle.x,
+        currentCircle.y,
+        (currentCircle.radius - 1) * 2,
+      );
+      p5.pop();
+      p5.circle(currentCircle.x, currentCircle.y, currentCircle.radius * 2);
+    }
+
+    if (circles.length >= totalCircles || !currentCircle) {
       p5.noLoop();
     }
   };
 
   p5.mouseClicked = () => {
     circles = [];
+    currentCircle = createCircle();
     p5.clear();
     p5.redraw();
     p5.loop();
   };
 
-  function createAndDrawCircle(tries = 0) {
-    if (tries > maximumTries) {
+  function createCircle(tries = 0): Circle {
+    if (tries >= maximumTries) {
       return;
     }
 
-    const circle: Circle = {
+    const newCircle = {
       x: p5.random(0, size),
       y: p5.random(0, size),
       radius: minRadius,
     };
-
-    if (doesCircleHaveACollision(circle)) {
-      createAndDrawCircle(tries + 1);
-      return;
+    if (!doesCircleHaveACollision(newCircle)) {
+      return newCircle;
     }
 
-    for (let radius = minRadius; radius <= maxRadius; radius++) {
-      circle.radius = radius;
-
-      if (doesCircleHaveACollision(circle)) {
-        circle.radius--;
-        break;
-      }
-    }
-
-    circles.push(circle);
-    p5.circle(circle.x, circle.y, circle.radius * 2);
+    return createCircle(tries + 1);
   }
 
   function doesCircleHaveACollision(circle: Circle) {
     const collidesWithVerticalWalls =
-      circle.x + circle.radius >= size || circle.x - circle.radius <= 0;
+      circle.x + circle.radius > size || circle.x - circle.radius < 0;
 
     const collidesWithHorizontalWalls =
-      circle.y + circle.radius >= size || circle.y - circle.radius <= 0;
+      circle.y + circle.radius > size || circle.y - circle.radius < 0;
 
     const collidesWithDrawnCircle = circles.some(
       drawnCircle =>
