@@ -13,6 +13,9 @@ const App: React.FC = () => (
           <li>
             <Link to="/joy-division">Joy Division</Link>
           </li>
+          <li>
+            <Link to="/triangular-mesh">Triangular mesh</Link>
+          </li>
         </ul>
       </nav>
 
@@ -23,6 +26,10 @@ const App: React.FC = () => (
 
         <Route path="/joy-division">
           <JoyDivision />
+        </Route>
+
+        <Route path="/triangular-mesh">
+          <TriangularMesh />
         </Route>
       </Switch>
     </div>
@@ -40,6 +47,14 @@ const Tiled: React.FC = () => {
 const JoyDivision: React.FC = () => {
   React.useEffect(() => {
     require('./src/joy-division');
+  }, []);
+
+  return <canvas></canvas>;
+};
+
+const TriangularMesh: React.FC = () => {
+  React.useEffect(() => {
+    require('./src/triangular-mesh');
   }, []);
 
   return <canvas></canvas>;
