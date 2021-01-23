@@ -1,6 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { drawJoyDivision } from './src/joy-division';
+import { drawTiled } from './src/tiled';
+import { drawTriangularMesh } from './src/triangular-mesh';
 
 const App: React.FC = () => (
   <Router>
@@ -38,7 +41,7 @@ const App: React.FC = () => (
 
 const Tiled: React.FC = () => {
   React.useEffect(() => {
-    require('./src/tiled');
+    drawTiled();
   }, []);
 
   return <canvas></canvas>;
@@ -46,7 +49,7 @@ const Tiled: React.FC = () => {
 
 const JoyDivision: React.FC = () => {
   React.useEffect(() => {
-    require('./src/joy-division');
+    drawJoyDivision();
   }, []);
 
   return <canvas></canvas>;
@@ -54,7 +57,7 @@ const JoyDivision: React.FC = () => {
 
 const TriangularMesh: React.FC = () => {
   React.useEffect(() => {
-    require('./src/triangular-mesh');
+    drawTriangularMesh();
   }, []);
 
   return <canvas></canvas>;
