@@ -11,7 +11,6 @@ const sketch = (p5: P5) => {
   var circles: Circle[] = [];
   var minRadius = 5;
   var maxRadius = 65;
-  let circleNumber = 0;
   var totalCircles = 650;
 
   const maximumTries = 100;
@@ -26,16 +25,14 @@ const sketch = (p5: P5) => {
     p5.noFill();
     p5.strokeWeight(2);
 
-    circleNumber++;
     createAndDrawCircle();
-    if (circleNumber >= totalCircles) {
+    if (circles.length >= totalCircles) {
       p5.noLoop();
     }
   };
 
   p5.mouseClicked = () => {
     circles = [];
-    circleNumber = 0;
     p5.clear();
     p5.redraw();
     p5.loop();
