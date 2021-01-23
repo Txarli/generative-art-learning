@@ -12,15 +12,21 @@
     "art"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/Txarli/generative-art-learning"
+    "type": "git",
+    "url": "https://github.com/Txarli/generative-art-learning"
   },
   "author": "Aitor Urrutia",
   "license": "ISC",
   "dependencies": {
     "@types/p5": "^0.9.1",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.7",
     "p5": "^1.2.0",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "typescript": "^4.1.3"
