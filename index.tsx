@@ -10,12 +10,19 @@ const App: React.FC = () => (
           <li>
             <Link to="/tiled">Tiled</Link>
           </li>
+          <li>
+            <Link to="/joy-division">Joy Division</Link>
+          </li>
         </ul>
       </nav>
 
       <Switch>
         <Route path="/tiled">
           <Tiled />
+        </Route>
+
+        <Route path="/joy-division">
+          <JoyDivision />
         </Route>
       </Switch>
     </div>
@@ -25,6 +32,14 @@ const App: React.FC = () => (
 const Tiled: React.FC = () => {
   React.useEffect(() => {
     require('./src/tiled');
+  }, []);
+
+  return <canvas></canvas>;
+};
+
+const JoyDivision: React.FC = () => {
+  React.useEffect(() => {
+    require('./src/joy-division');
   }, []);
 
   return <canvas></canvas>;
