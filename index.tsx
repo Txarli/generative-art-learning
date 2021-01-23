@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import { Tiled } from './src/Tiled';
 import { JoyDivision } from './src/JoyDivision';
 import { TriangularMesh } from './src/TriangularMesh';
+import { CirclePacking } from './src/CirclePacking';
+import { CubicDisarray } from './src/CubicDisarray';
 
 const App: React.FC = () => (
   <Router>
@@ -19,6 +21,12 @@ const App: React.FC = () => (
           <li>
             <Link to="/triangular-mesh">Triangular mesh</Link>
           </li>
+          <li>
+            <Link to="/circle-packing">Circle packing</Link>
+          </li>
+          <li>
+            <Link to="/cubic-disarray">Cubic disarray</Link>
+          </li>
         </ul>
       </nav>
 
@@ -33,6 +41,14 @@ const App: React.FC = () => (
 
         <Route path="/triangular-mesh">
           <TriangularMesh />
+        </Route>
+
+        <Route path="/cubic-disarray">
+          <CubicDisarray />
+        </Route>
+
+        <Route path="/circle-packing">
+          <CirclePacking />
         </Route>
       </Switch>
     </div>

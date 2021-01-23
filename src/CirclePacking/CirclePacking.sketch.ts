@@ -6,7 +6,7 @@ interface Circle {
   radius: number;
 }
 
-const sketch = (p5: P5) => {
+export const sketch = (p5: P5) => {
   const size = 600;
   var circles: Circle[] = [];
   var minRadius = 5;
@@ -86,5 +86,3 @@ const sketch = (p5: P5) => {
     );
   }
 };
-
-new P5(sketch);
