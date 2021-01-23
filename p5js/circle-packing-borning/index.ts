@@ -18,8 +18,6 @@ const sketch = (p5: P5) => {
   p5.setup = () => {
     p5.createCanvas(size, size);
     p5.background(255);
-
-    p5.frameRate(200);
   };
 
   p5.draw = () => {
