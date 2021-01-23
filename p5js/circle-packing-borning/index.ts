@@ -36,14 +36,7 @@ const sketch = (p5: P5) => {
       circles.push(currentCircle);
       currentCircle = createCircle();
     } else {
-      p5.push();
-      p5.stroke('white');
-      p5.circle(
-        currentCircle.x,
-        currentCircle.y,
-        (currentCircle.radius - 1) * 2,
-      );
-      p5.pop();
+      erasePreviousCircle();
       p5.circle(currentCircle.x, currentCircle.y, currentCircle.radius * 2);
     }
 
@@ -95,6 +88,13 @@ const sketch = (p5: P5) => {
       collidesWithHorizontalWalls ||
       collidesWithDrawnCircle
     );
+  }
+
+  function erasePreviousCircle() {
+    p5.push();
+    p5.stroke('white');
+    p5.circle(currentCircle.x, currentCircle.y, (currentCircle.radius - 1) * 2);
+    p5.pop();
   }
 };
 
