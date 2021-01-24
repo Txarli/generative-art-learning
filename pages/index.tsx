@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import { font } from '../ui/theme';
+import { Title } from '../ui/components/Title';
 
 function Test() {
   return (
@@ -40,7 +39,3 @@ function Test() {
 }
 
 export default Test;
-
-const Title = styled.h1`
-  ${font.h1()}
-`;
