@@ -13,7 +13,7 @@ export const EmotionMethod: React.FC = () => {
 };
 
 const sketch = (p5: p5) => {
-  const padding = 15;
+  const padding = 20;
   const override = 10;
   const size = 600;
   const squareNumber = 6;
@@ -61,20 +61,20 @@ const sketch = (p5: p5) => {
 
         for (let i = 0; i <= p5.random(4, 7); i++) {
           const a = {
-            x: p5.random(x * squareSize, centerX),
-            y: p5.random(y * squareSize, centerY),
+            x: p5.random(x * squareSize - override, centerX),
+            y: p5.random(y * squareSize - override, centerY),
           };
           const b = {
-            x: p5.random(centerX, (x + 1) * squareSize + override * 2),
-            y: p5.random(y * squareSize, centerY),
+            x: p5.random(centerX, (x + 1) * squareSize + override),
+            y: p5.random(y * squareSize - override, centerY),
           };
           const c = {
-            x: p5.random(centerX, (x + 1) * squareSize + override * 2),
-            y: p5.random(centerY, (y + 1) * squareSize + override * 2),
+            x: p5.random(centerX, (x + 1) * squareSize + override),
+            y: p5.random(centerY, (y + 1) * squareSize + override),
           };
           const d = {
-            x: p5.random(x * squareSize, centerX),
-            y: p5.random(centerY, (y + 1) * squareSize + override * 2),
+            x: p5.random(x * squareSize - override, centerX),
+            y: p5.random(centerY, (y + 1) * squareSize + override),
           };
           p5.quad(a.x, a.y, b.x, b.y, c.x, c.y, d.x, d.y);
         }
