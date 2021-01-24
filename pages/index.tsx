@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import { GlobalStyle } from '../src/theme/GlobalStyle';
+import { GlobalStyle } from '../ui/theme/GlobalStyle';
+import styled from 'styled-components';
+import { font } from '../ui/theme';
 
 function Test() {
   return (
@@ -11,6 +13,7 @@ function Test() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
+      <Title>Generative art notes</Title>
       <ul>
         <li>
           <a href="/tiled">Tiled</a>
@@ -45,3 +48,7 @@ function Test() {
 }
 
 export default Test;
+
+const Title = styled.h1`
+  ${font.h1()}
+`;

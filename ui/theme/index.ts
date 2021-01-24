@@ -1,0 +1,1 @@
+export { font } from './theme';
