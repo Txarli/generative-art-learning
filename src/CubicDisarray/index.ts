@@ -1,1 +1,3 @@
-export { CubicDisarray } from './CubicDisarray';
+import { CubicDisarray } from './CubicDisarray';
+
+export default CubicDisarray;

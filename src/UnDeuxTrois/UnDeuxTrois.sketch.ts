@@ -1,6 +1,6 @@
 import P5 from 'p5';
 
-const sketch = (p5: P5) => {
+export const sketch = (p5: P5) => {
   const step = 40;
   const size = step * 15;
   const aThirdOfHeight = size / 3;
@@ -51,5 +51,3 @@ const sketch = (p5: P5) => {
     p5.pop();
   }
 };
-
-new P5(sketch);

@@ -2,7 +2,7 @@ import P5 from 'p5';
 
 const multiplier = 0.25;
 
-const sketch = (p5: P5) => {
+export const sketch = (p5: P5) => {
   p5.setup = () => {
     p5.createCanvas(600, 800);
     p5.background(255);
@@ -31,5 +31,3 @@ const sketch = (p5: P5) => {
     }
   };
 };
-
-new P5(sketch);
