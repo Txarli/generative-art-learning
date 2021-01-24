@@ -7,7 +7,11 @@ export const CubicDisarray: React.FC = () => {
   const ref = React.useRef<HTMLDivElement>();
 
   useEffect(() => {
-    new P5(sketch, ref.current);
+    const p5 = new P5(sketch, ref.current);
+
+    () => {
+      p5.remove();
+    };
   }, []);
 
   return <div ref={ref}></div>;
