@@ -1,18 +1,9 @@
-import * as React from 'react';
-import { useEffect } from 'react';
+import React from 'react';
+import { useP5Sketch } from '../useP5Sketch';
 import { sketch } from './CubicDisarray.sketch';
-import P5 from 'p5';
 
 export const CubicDisarray: React.FC = () => {
-  const ref = React.useRef<HTMLDivElement>();
-
-  useEffect(() => {
-    const p5 = new P5(sketch, ref.current);
-
-    () => {
-      p5.remove();
-    };
-  }, []);
+  const ref = useP5Sketch(sketch);
 
   return <div ref={ref}></div>;
 };

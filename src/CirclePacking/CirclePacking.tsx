@@ -1,14 +1,9 @@
-import * as React from 'react';
-import { useEffect } from 'react';
+import React from 'react';
 import { sketch } from './CirclePacking.sketch';
-import P5 from 'p5';
+import { useP5Sketch } from '../useP5Sketch';
 
 export const CirclePacking: React.FC = () => {
-  const ref = React.useRef<HTMLDivElement>();
-
-  useEffect(() => {
-    new P5(sketch, ref.current);
-  }, []);
+  const ref = useP5Sketch(sketch);
 
   return <div ref={ref}></div>;
 };
