@@ -59,7 +59,7 @@ const sketch = (p5: p5) => {
         const centerX = getRandomX();
         const centerY = getRandomY();
 
-        for (let i = 0; i <= p5.random(4, 7); i++) {
+        for (let i = 0; i <= p5.random(4, 11); i++) {
           const a = {
             x: p5.random(x * squareSize - override, centerX),
             y: p5.random(y * squareSize - override, centerY),
